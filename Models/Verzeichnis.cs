@@ -7,18 +7,18 @@ namespace CarRent.Models
 {
     public class Verzeichnis
     {
-        List<Customer> custs = new List<Customer>();
-        List<Car> cars = new List<Car>();
-        List<Reservation> res = new List<Reservation>();
+        List<Customer> _kunden = new List<Customer>();
+        List<Car> _cars = new List<Car>();
+        List<Reservation> _res = new List<Reservation>();
 
         public Verzeichnis()
         {
-            custs.Add(new Customer { Kundennummer = 1, Nachname= "Alpha", Ort="Altstätten", Strasse="A", Vorname="M", Erstellungsdatum = DateTime.Now, Email = "info@me.com" });
-            custs.Add(new Customer { Kundennummer = 2, Nachname = "Beta", Ort = "Altstätten", Strasse = "A", Vorname = "M", Erstellungsdatum = DateTime.Now, Email = "info@me.com" });
-            custs.Add(new Customer { Kundennummer = 3, Nachname = "Gamma", Ort = "Altstätten", Strasse = "A", Vorname = "M", Erstellungsdatum = DateTime.Now, Email = "info@me.com" });
-            custs.Add(new Customer { Kundennummer = 4, Nachname = "Delta", Ort = "Altstätten", Strasse = "A", Vorname = "M", Erstellungsdatum = DateTime.Now, Email = "info@me.com" });
-            custs.Add(new Customer { Kundennummer = 5, Nachname = "Epsilon", Ort = "Altstätten", Strasse = "A", Vorname = "M", Erstellungsdatum = DateTime.Now, Email = "info@me.com" });
-            custs.Add(new Customer { Kundennummer = 6, Nachname = "Zeta", Ort = "Altstätten", Strasse = "A", Vorname = "M", Erstellungsdatum = DateTime.Now, Email = "info@me.com" });
+            _kunden.Add(new Customer { Kundennummer = 1, Nachname= "Alpha", Ort="Altstätten", Strasse="A", Vorname="M", Erstellungsdatum = DateTime.Now, Email = "info@me.com" });
+            _kunden.Add(new Customer { Kundennummer = 2, Nachname = "Beta", Ort = "Altstätten", Strasse = "A", Vorname = "M", Erstellungsdatum = DateTime.Now, Email = "info@me.com" });
+            _kunden.Add(new Customer { Kundennummer = 3, Nachname = "Gamma", Ort = "Altstätten", Strasse = "A", Vorname = "M", Erstellungsdatum = DateTime.Now, Email = "info@me.com" });
+            _kunden.Add(new Customer { Kundennummer = 4, Nachname = "Delta", Ort = "Altstätten", Strasse = "A", Vorname = "M", Erstellungsdatum = DateTime.Now, Email = "info@me.com" });
+            _kunden.Add(new Customer { Kundennummer = 5, Nachname = "Epsilon", Ort = "Altstätten", Strasse = "A", Vorname = "M", Erstellungsdatum = DateTime.Now, Email = "info@me.com" });
+            _kunden.Add(new Customer { Kundennummer = 6, Nachname = "Zeta", Ort = "Altstätten", Strasse = "A", Vorname = "M", Erstellungsdatum = DateTime.Now, Email = "info@me.com" });
 
             Tagesgebuehr t100 = new Tagesgebuehr() {TagesgebuehrID = 1, AnsatzProTagInCHF = 100};
             Tagesgebuehr t200 = new Tagesgebuehr() {TagesgebuehrID = 2, AnsatzProTagInCHF = 200};
@@ -26,25 +26,25 @@ namespace CarRent.Models
             Klasse k1 = new Klasse() {KlasseID = 1, Bezeichnung = "Klasse budget", Ansatz = t100};
             Klasse k2 = new Klasse() {KlasseID = 2, Bezeichnung = "Klasse komfort", Ansatz = t200};
 
-            cars.Add(new Car { Id = 1, Kennzeichen = "SG333838", Marke = "Opel", Modell = "Corsa", Baujahr = 2011, Klasse = k1 });
-            cars.Add(new Car { Id = 2, Kennzeichen = "SG333839", Marke = "VW", Modell = "Polo", Baujahr = 2011, Klasse = k1 });
-            cars.Add(new Car { Id = 3, Kennzeichen = "SG333840", Marke = "Audi", Modell = "S3", Baujahr = 2011, Klasse = k2 });
+            _cars.Add(new Car { Id = 1, Kennzeichen = "SG333838", Marke = "Opel", Modell = "Corsa", Baujahr = 2011, Klasse = k1 });
+            _cars.Add(new Car { Id = 2, Kennzeichen = "SG333839", Marke = "VW", Modell = "Polo", Baujahr = 2011, Klasse = k1 });
+            _cars.Add(new Car { Id = 3, Kennzeichen = "SG333840", Marke = "Audi", Modell = "S3", Baujahr = 2011, Klasse = k2 });
 
-            res.Add(new Reservation() { Reservationsnummer = 1, Kunde = custs[0], Auto = cars[0], Beginn = DateTime.Now, Ende = DateTime.Now, wurdeZuMietVertrag = 0} );
-            res.Add(new Reservation() { Reservationsnummer = 2, Kunde = custs[1], Auto = cars[1], Beginn = DateTime.Now, Ende = DateTime.Now, wurdeZuMietVertrag = 0} );
-            res.Add(new Reservation() { Reservationsnummer = 3, Kunde = custs[2], Auto = cars[2], Beginn = DateTime.Now, Ende = DateTime.Now, wurdeZuMietVertrag = 0} );
-            res.Add(new Reservation() { Reservationsnummer = 2, Kunde = custs[1], Auto = cars[1], Beginn = DateTime.Now, Ende = DateTime.Now, wurdeZuMietVertrag = 1} );
+            _res.Add(new Reservation() { Reservationsnummer = 1, Kunde = _kunden[0], Auto = _cars[0], Beginn = DateTime.Now, Ende = DateTime.Now, wurdeZuMietVertrag = 0} );
+            _res.Add(new Reservation() { Reservationsnummer = 2, Kunde = _kunden[1], Auto = _cars[1], Beginn = DateTime.Now, Ende = DateTime.Now, wurdeZuMietVertrag = 0} );
+            _res.Add(new Reservation() { Reservationsnummer = 3, Kunde = _kunden[2], Auto = _cars[2], Beginn = DateTime.Now, Ende = DateTime.Now, wurdeZuMietVertrag = 0} );
+            _res.Add(new Reservation() { Reservationsnummer = 2, Kunde = _kunden[1], Auto = _cars[1], Beginn = DateTime.Now, Ende = DateTime.Now, wurdeZuMietVertrag = 1} );
         }
 
         public IEnumerable<Reservation> GetAllVertrage()
         {
             List<Reservation> ver = new List<Reservation>();
 
-            foreach (Reservation reservation in res)
+            foreach (Reservation Reservation in _res)
             {
-                if (reservation.wurdeZuMietVertrag == 1)
+                if (Reservation.wurdeZuMietVertrag == 1)
                 {
-                    ver.Add(reservation);
+                    ver.Add(Reservation);
                 }
             }
 
@@ -53,43 +53,56 @@ namespace CarRent.Models
 
         public IEnumerable<Reservation> GetAllReservationen()
         {
-            List<Reservation> onlyRes = new List<Reservation>();
+            List<Reservation> only_res = new List<Reservation>();
 
-            foreach (Reservation r in res)
+            foreach (Reservation r in _res)
             {
                 if (r.wurdeZuMietVertrag == 0)
                 {
-                    onlyRes.Add(r);
+                    only_res.Add(r);
                 }
             }
 
-            return onlyRes;
+            return only_res;
         }
 
-        public IEnumerable<Car> GetAllCars()
+        public IEnumerable<Car> GetAll_cars()
         {
-            return cars;
+            return _cars;
         }
 
         public IEnumerable<Customer> GetAllCustomers()
         {
-            return custs;
+            return _kunden;
         }
 
-        public Reservation getReservation(int Reservationsnummer)
+        public Reservation getReservation(Reservation r)
         {
-            return res[0];
+            return _res[r.Reservationsnummer-1];
         }
 
-        public Car getCar(String Kennzeichen)
+        public Car getCar(Car c)
         {
-            return cars[0];
+            return _cars[c.Id - 1];
         }
 
-        public Customer getCustomer(int Kundennummer)
+        public Customer getCustomer(Customer c)
         {
-            System.Console.WriteLine("Test getCustomer: " + custs[Kundennummer - 1].Nachname);
-            return custs[Kundennummer - 1];
+            System.Console.WriteLine("Test getCustomer: " + _kunden[c.Id - 1].Nachname);
+            return _kunden[c.Id - 1];
+        }
+
+        public Customer getCustomerByID(int id)
+        {
+            foreach (Customer c in _kunden)
+            {
+                if (c.Id == id)
+                {
+                    return c;
+                }
+            }
+
+            return null;
         }
 
         public void addVertrag(Reservation v)
@@ -99,47 +112,52 @@ namespace CarRent.Models
 
         public void addReservation(Reservation r)
         {
-            res.Add(r);
+            _res.Add(r);
         }
 
         public void addCar(Car c)
         {
-            cars.Add(c);
+            _cars.Add(c);
         }
 
         public void addKunde(Customer e)
         {
-            custs.Add(e);
+            _kunden.Add(e);
         }
 
         public void updateReservation(Reservation r)
         {
-            res.Add(r);
+            _res.Add(r);
         }
 
         public void updateCar(Car c)
         {
-            cars.Add(c);
+            _cars.Add(c);
         }
 
         public void updateKunde(Customer e)
         {
-            custs.Add(e);
+            _kunden.Add(e);
         }
 
-        public void deleteReservation(int Reservationsnummer)
+        public void deleteVertrag(Reservation v)
         {
-
+            v.wurdeZuMietVertrag = 0;
         }
 
-        public void deleteCar(String Kennzeichen)
+        public void deleteReservation(Reservation r)
         {
-
+            _res.Remove(r);
         }
 
-        public void deleteKunde(int Kundennummer)
+        public void deleteCar(Car c)
         {
-            
+            _cars.Remove(c);
+        }
+
+        public void deleteKunde(Customer c)
+        {
+            _kunden.Remove(c);
         }
 
     }

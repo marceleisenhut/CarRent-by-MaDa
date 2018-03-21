@@ -23,7 +23,7 @@ namespace CarRent.Controllers
 
         
         [HttpPost("[action]")]
-        [Route("api/Customer/Create")]
+        [Route("api/customer/create")]
         public int Create([FromBody] Customer Customer)
         {
             vz.addKunde(Customer);
@@ -31,15 +31,15 @@ namespace CarRent.Controllers
         }
 
         [HttpGet("{id}")]
-        [Route("api/Customer/Details/{id}")]
+        [Route("api/customer/details/{id}")]
         public Customer Details(int id)
         { 
             System.Console.WriteLine("Ausgabe Customer Details (Controller) ID: " + id);
-            return vz.getCustomer(id);
+            return vz.getCustomerByID(id);
         }
 
         [HttpPut]
-        [Route("api/Customer/Edit")]
+        [Route("api/customer/edit")]
         public int Edit([FromBody]Customer Customer)
         {
             vz.updateKunde(Customer);
@@ -47,10 +47,10 @@ namespace CarRent.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Route("api/Customer/Delete/{id}")]
+        [Route("api/customer/delete/{id}")]
         public int Delete(int id)
         {
-            vz.deleteKunde(id);
+            vz.deleteKunde(vz.getCustomerByID(id));
             return 1;
         }
     }

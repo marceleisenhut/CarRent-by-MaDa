@@ -1,0 +1,67 @@
+﻿<?xml version = "1.0" encoding = "utf-8" ?>
+
+<hibernate-mapping xmlns = "urn:nhibernate-mapping-2.2"
+   assembly = "NHibernateDB" namespace = "CarRent.Models">
+
+  <class name = "Customer">
+    <id name = "Kundennummer">
+      <generator class = "native"/>
+    </id>
+
+    <property name = "Nachname"/>
+    <property name = "Vorname"/>
+    <property name = "Strasse"/>
+    <property name = "Ort"/>
+    <property name = "Telefonnummer"/>
+    <property name = "Email"/>
+  </class>
+
+  <class name = "Car">
+    <id name = "Id">
+      <generator class ="native"/>
+    </id>
+
+    <property name="Kennzeichen"/>
+    <property name="Marke"/>
+    <property name="Modell"/>
+    <property name="Kilometerstand"/>
+    <property name="Baujahr"/>
+    <property name="AnzahlSitze"/>
+    <property name="AnzahlTueren"/>
+    <property name="LeistungInPS"/>
+    <property name="Klasse"/>
+    <property name="Erstellungsdatum"/>
+  </class>
+
+  <class name="Klasse">
+    <id name="Id">
+      <generator class ="native"/>
+    </id>
+    
+    <property name="KlasseID"/>
+    <property name="Bezeichnung"/>
+    <property name="Ansatz"/>
+  </class>
+  
+  <class name="Tagesgebuehr">
+    <id name="TagesgebuerID">
+      <generator class ="native"/>
+    </id>
+    
+    <property name="AnsatzProTagInCHF"/>
+  </class>
+
+  <class name = "Reservation">
+    <id name="Reservationsnummer">
+      <generator class ="native"/>
+    </id>
+    
+    <property name="Auto"/>
+    <property name="Kunde"/>
+    <property name="Beginn"/>
+    <property name="Ende"/>
+    <property name="wurdeZuMietVertrag"/>
+    <property name="Erstellungsdatum"/>
+  </class>
+
+</hibernate-mapping>

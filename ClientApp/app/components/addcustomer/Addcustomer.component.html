@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <h1>Kunde {{title}}</h1>
+    <hr />
+    <form [formGroup]="customerForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+        <div class="form-group row">
+            <label class=" control-label col-md-12" for="kundennummer">Kundennummer</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="kundennummer" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class=" control-label col-md-12" for="vorname">Vorname</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="vorname">
+            </div>
+            <span class="text-danger" *ngIf="customerForm.hasError('required', 'vorname') && formDir.submitted">
+                Vorname ist ein Pflichtfeld.
+            </span>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="nachname">Nachname</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="nachname">
+                <!--  <select class="form-control" data-val="true" formControlName="nachname">
+                <option value="">-- Select Gender --</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select> -->
+            </div>
+            <span class="text-danger" *ngIf="customerForm.hasError('required', 'nachname') && formDir.submitted">
+                Nachname ist ein Pflichtfeld.
+            </span>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="strasse">Strasse</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="strasse">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="ort">Ort</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="ort" data-val="true">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="Telefonnummer">Telefonnummer</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="Telefonnummer" data-val="true">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="ort">Email</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="Email" data-val="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Speichern</button>
+            <button class="btn" (click)="cancel()">Abbrechen</button>
+        </div>
+    </form>
+</body>
+</html>  

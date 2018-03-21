@@ -1,0 +1,39 @@
+﻿<h1>Kunden</h1>
+
+<p>Alle gespeicherte Kunden auf der Datenbank.</p>
+
+<p>
+    <a [routerLink]="['/register-customer']">Neuen Kunde erfassen</a>
+</p>
+
+<table class='table'>
+    <thead>
+        <tr>
+            <th>Kundennummer</th>
+            <th>Vorname</th>
+            <th>Nachname</th>
+            <th>Strasse</th>
+            <th>Ort</th>
+            <th>Telefonnummer</th>
+            <th>Email</th>
+            <th>Erstellungsdatum</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of empList">
+            <td>{{ emp.kundennummer }}</td>
+            <td>{{ emp.vorname }}</td>
+            <td>{{ emp.nachname }}</td>
+            <td>{{ emp.strasse }}</td>
+            <td>{{ emp.ort }}</td>
+            <td>{{ emp.telefonnummer }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.erstellungsdatum }}</td>
+            <td>
+            <td>
+                <a [routerLink]="['/customer/edit/', emp.kundennummer]">ändern</a> |
+                <a [routerLink]="" (click)="delete(emp.kundennummer)">entfernen</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

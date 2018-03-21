@@ -1,0 +1,35 @@
+﻿<h1>Reservationen</h1>
+
+<p>Alle gespeicherte Reservationen auf der Datenbank.</p>
+
+<p>
+    <a [routerLink]="['/register-reservation']">Neue Reservation erfassen</a>
+</p>
+
+<table class='table'>
+    <thead>
+        <tr>
+            <th>Reservationsnummer</th>
+            <th>Auto</th>
+            <th>Kunde</th>
+            <th>Beginn</th>
+            <th>Ende</th>
+            <th>Erstellungsdatum</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let res of resList">
+            <td>{{ res.reservationsnummer }}</td>
+            <td>{{ res.auto.kennzeichen }}</td>
+            <td>{{ res.kunde.nachname }}</td>
+            <td>{{ res.beginn }}</td>
+            <td>{{ res.ende }}</td>
+            <td>{{ res.erstellungsdatum }}</td>
+            <td>
+            <td>
+                <a [routerLink]="['/reservation/edit/', res.reservationsnummer]">ändern</a> |
+                <a [routerLink]="" (click)="delete(res.reservationsnummer)">entfernen</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

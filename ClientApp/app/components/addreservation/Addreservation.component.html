@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <h1>Reservation {{title}}</h1>
+    <hr />
+    <form [formGroup]="reservationForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+        <div class="form-group row">
+            <label class=" control-label col-md-12" for="reservationsnummer">Reservationsnummer</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="reservationsnummer" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class=" control-label col-md-12" for="auto">Auto</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="auto">
+            </div>
+            <span class="text-danger" *ngIf="reservationForm.hasError('required', 'auto') && formDir.submitted">
+                Auto ist ein Pflichtfeld.
+            </span>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="kunde">Kunde</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="kunde">
+                <!--  <select class="form-control" data-val="true" formControlName="nachname">
+                <option value="">-- Select Gender --</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select> -->
+            </div>
+            <span class="text-danger" *ngIf="reservationForm.hasError('required', 'kunde') && formDir.submitted">
+                Kunde ist ein Pflichtfeld.
+            </span>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="beginn">Beginn</label>
+            <div class="col-md-4">
+                <input type="date" ng-model="dateString" formControlName="beginn" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="ende">Ende</label>
+            <div class="col-md-4">
+                <input type="date" ng-model="dateString" formControlName="ende" />
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Speichern</button>
+            <button class="btn" (click)="cancel()">Abbrechen</button>
+        </div>
+    </form>
+</body>
+</html>  

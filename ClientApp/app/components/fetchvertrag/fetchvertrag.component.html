@@ -1,0 +1,35 @@
+﻿<h1>Verträge</h1>
+
+<p>Alle gespeicherte Verträge auf der Datenbank.</p>
+
+<p>
+    <a [routerLink]="['/register-vertrag']">Neuen Vertrag erfassen</a>
+</p>
+
+<table class='table'>
+    <thead>
+    <tr>
+        <th>Vertragsnummer</th>
+        <th>Auto</th>
+        <th>Kunde</th>
+        <th>Beginn</th>
+        <th>Ende</th>
+        <th>Erstellungsdatum</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let ver of verList">
+        <td>{{ ver.reservationsnummer }}</td>
+        <td>{{ ver.auto.kennzeichen }}</td>
+        <td>{{ ver.kunde.nachname }}</td>
+        <td>{{ ver.beginn }}</td>
+        <td>{{ ver.ende }}</td>
+        <td>{{ ver.erstellungsdatum }}</td>
+        <td>
+        <td>
+            <a [routerLink]="['/vertrag/edit/', ver.reservationsnummer]">ändern</a> |
+            <a [routerLink]="" (click)="delete(ver.reservationsnummer)">entfernen</a>
+        </td>
+    </tr>
+    </tbody>
+</table>

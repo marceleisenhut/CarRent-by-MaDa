@@ -1,0 +1,45 @@
+﻿<h1>Autos</h1>
+
+<p>Alle gespeicherten Autos in der Datenbank.</p>
+
+<p>
+    <a [routerLink]="['/register-car']">Neues Auto erfassen</a>
+</p>
+
+<table class='table'>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Kennzeichen</th>
+            <th>Marke</th>
+            <th>Modell</th>
+            <th>Baujahr</th>
+            <th>Klasse (CHF/Tag)</th>
+            <th>Kilometerstand</th>
+            <th>Anzahl Sitze</th>
+            <th>Anzahl Türen</th>
+            <th>Leistung in PS</th>
+            <th>Erstellungsdatum</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let car of carList">
+            <td>{{ car.id }}</td>
+            <td>{{ car.kennzeichen }}</td>
+            <td>{{ car.marke }}</td>
+            <td>{{ car.modell }}</td>
+            <td>{{ car.baujahr }}</td>
+            <td>{{ car.klasse.ansatz.ansatzprotaginchf }}</td>
+            <td>{{ car.kilometerstand }}</td>
+            <td>{{ car.anzahlsitze }}</td>
+            <td>{{ car.anzahltueren }}</td>
+            <td>{{ car.leistunginps }}</td>
+            <td>{{ car.erstellungsdatum }}</td>
+            <td>
+            <td>
+                <a [routerLink]="['/car/edit/', car.id]">ändern</a> |
+                <a [routerLink]="" (click)="delete(car.id)">entfernen</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

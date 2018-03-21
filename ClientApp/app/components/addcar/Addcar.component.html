@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <h1>Auto {{title}}</h1>
+    <hr />
+    <form [formGroup]="carForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+        <div class="form-group row">
+            <label class=" control-label col-md-12" for="id">ID</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="id" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class=" control-label col-md-12" for="kennzeichen">Kennzeichen</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="kennzeichen">
+            </div>
+            <span class="text-danger" *ngIf="carForm.hasError('required', 'kennzeichen') && formDir.submitted">
+                Kennzeichen ist ein Pflichtfeld.
+            </span>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="marke">Marke</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="marke">
+            </div>
+            <span class="text-danger" *ngIf="carForm.hasError('required', 'marke') && formDir.submitted">
+                Marke ist ein Pflichtfeld.
+            </span>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="modell">Modell</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="modell">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="kilometerstand">Kilometerstand</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="kilometerstand" data-val="true">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="baujahr">Baujahr</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="baujahr" data-val="true">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="anzahlsitze">Anzahl Sitze</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="anzahlsitze" data-val="true">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="anzahltueren">Anzahl Türen</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="anzahltueren" data-val="true">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="leistunginps">Leistung in PS</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="leistunginps" data-val="true">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12" for="klasse">Klasse</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" formControlName="klasse" data-val="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Speichern</button>
+            <button class="btn" (click)="cancel()">Abbrechen</button>
+        </div>
+    </form>
+</body>
+</html>  

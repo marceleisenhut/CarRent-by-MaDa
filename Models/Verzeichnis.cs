@@ -76,6 +76,11 @@ namespace CarRent.Models
             return _kunden;
         }
 
+        public IEnumerable<Car> GetAllCars()
+        {
+            return _cars;
+        }
+
         public Reservation getReservation(Reservation r)
         {
             return _res[r.Reservationsnummer-1];
